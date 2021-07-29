@@ -3,7 +3,6 @@
 
 namespace Mohammadv184\ArvanCloud\Laravel;
 
-
 use Illuminate\Support\ServiceProvider;
 use Mohammadv184\ArvanCloud\Adapter\Http;
 use Mohammadv184\ArvanCloud\Auth\ApiKey;
@@ -25,8 +24,8 @@ class ArvanCloudServiceProvider extends ServiceProvider
 
     private function registerServices()
     {
-        foreach (config("arvancloud.map") as $service => $class){
-            $this->app->singleton($service,function () use($service,$class){
+        foreach (config("arvancloud.map") as $service => $class) {
+            $this->app->singleton($service, function () use ($service, $class) {
                 $config = config("arvancloud");
                 $serviceConfig = $config['services'][$service];
                 $auth = $config['auth']['default'] === "ApiKey"
@@ -34,8 +33,8 @@ class ArvanCloudServiceProvider extends ServiceProvider
                     : new UserToken($config['auth']['UserToken']);
                 $baseUrl = $serviceConfig['baseUrl'];
 
-                $http = new Http($auth, $baseUrl ,$class);
-                return new $class($serviceConfig,$http);
+                $http = new Http($auth, $baseUrl, $class);
+                return new $class($http, $serviceConfig);
             });
         }
     }
@@ -43,7 +42,8 @@ class ArvanCloudServiceProvider extends ServiceProvider
     private function mergeConfig()
     {
         $this->mergeConfigFrom(
-            __DIR__."/../config/arvancloud.php","arvancloud"
+            __DIR__."/../config/arvancloud.php",
+            "arvancloud"
         );
     }
 
