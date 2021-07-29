@@ -1,23 +1,15 @@
-/vendor/
-node_modules/
-npm-debug.log
-yarn-error.log
+/composer.lock
+*.php_cs.cache
+.phpstorm.meta.php
+/phpunit.bat
+# PhpStorm project's cache
+.idea
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
+# VSCode project's cache
+.vscode
 
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
-
-storage/*.key
-.env
-Homestead.yaml
-Homestead.json
-/.vagrant
+# phpunit cache
 .phpunit.result.cache
+
+# Vendor directory
+vendor/
