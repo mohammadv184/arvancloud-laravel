@@ -51,6 +51,6 @@ class ArvanCloudServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__."/../config/arvancloud.php" => config_path("arvancloud.php")
-        ]);
+        ], 'config');
     }
 }
