@@ -35,7 +35,7 @@
     "require": {
         "mohammadv184/arvancloud": "^1.0",
         "php": ">=7.3",
-        "illuminate/support": "^5.0|^6.0|^7.0|^8.0"
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
