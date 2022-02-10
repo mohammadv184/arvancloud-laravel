@@ -10,6 +10,7 @@ use Mohammadv184\ArvanCloud\Services\Cdn\Endpoints\Ssl;
 
 /**
  * Class CDN.
+ *
  * @method static Cache  cache(string $domain = null)
  * @method static Dns    dns(string $domain = null)
  * @method static Domain domain(string $domain = null)
